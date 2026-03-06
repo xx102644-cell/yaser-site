@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>مسابقة رمضان الكبرى 🌙</title>
+    <!-- ربط ملف CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <!-- 1️⃣ صفحة الترحيب -->
+        <div id="welcome-screen" class="screen">
+            <h1>🌙 مسابقة رمضان الكبرى 🌙</h1>
+            <div class="prize-list">
+                <div class="prize-item"><i class="fas fa-dollar-sign"></i> 1000 دولار</div>
+                <div class="prize-item"><i class="fas fa-dollar-sign"></i> 500 دولار</div>
+                <div class="prize-item"><i class="fas fa-mobile-alt"></i> iPhone 17 Pro</div>
+            </div>
+            <p style="text-align: center; font-size: 1.2rem; margin: 10px 0 20px;">اختر صندوق الهدايا واربح فوراً!</p>
+            <button class="btn" id="start-contest"><i class="fas fa-gift"></i> ابدأ المسابقة</button>
+            <div class="footer-note">مرحباً بك في أكبر مسابقة رمضانية</div>
+        </div>
+
+        <!-- 2️⃣ صفحة اختيار الهدايا (3 صناديق) -->
+        <div id="gift-screen" class="screen hidden">
+            <h2>🎁 اختر صندوق الحظ</h2>
+            <div class="gifts-container">
+                <div class="gift-box" data-gift="1000 دولار" id="gift1">
+                    <span>🎁</span>
+                    <div class="gift-label">صندوق 1</div>
+                </div>
+                <div class="gift-box" data-gift="500 دولار" id="gift2">
+                    <span>🎁</span>
+                    <div class="gift-label">صندوق 2</div>
+                </div>
+                <div class="gift-box" data-gift="iPhone 17 Pro" id="gift3">
+                    <span>🎁</span>
+                    <div class="gift-label">صندوق 3</div>
+                </div>
+            </div>
+            <div id="gift-message" class="message-area">✨ اختر صندوقاً لتربح جائزتك ✨</div>
+            <button class="btn btn-back" id="back-from-gift"><i class="fas fa-arrow-right"></i> رجوع</button>
+        </div>
+
+        <!-- 3️⃣ صفحة الاشتراك في القناة -->
+        <div id="subscribe-screen" class="screen hidden">
+            <h2>📺 اشترك بالقناة</h2>
+            <p style="font-size:1.2rem; margin:20px 0;">لتأكيد مشاركتك، اشترك في قناتنا على يوتيوب:</p>
+            <div id="subscribe-link" class="subscribe-link">
+                <i class="fab fa-youtube"></i> @powerboardpro
+            </div>
+            <p style="background: #2d4055; border-radius:40px; padding: 12px; margin:20px 0;">بعد الاشتراك، سيتم توجيهك تلقائياً لتسجيل البيانات.</p>
+            <button class="btn btn-back" id="back-from-subscribe"><i class="fas fa-arrow-right"></i> رجوع</button>
+        </div>
+
+        <!-- 4️⃣ صفحة تسجيل البيانات -->
+        <div id="register-screen" class="screen hidden">
+            <h2>📝 سجل بياناتك</h2>
+            <div class="form-group">
+                <label><i class="fas fa-user"></i> الاسم الكامل</label>
+                <input type="text" id="fullname" placeholder="مثال: أحمد محمد" autocomplete="off">
+            </div>
+            <div class="form-group">
+                <label><i class="fas fa-envelope"></i> البريد الإلكتروني</label>
+                <input type="email" id="email" placeholder="example@domain.com">
+            </div>
+            <div class="form-group">
+                <label><i class="fas fa-phone-alt"></i> رقم الموبايل</label>
+                <input type="tel" id="mobile" placeholder="05xxxxxxxx">
+            </div>
+            <div class="validation-icon" id="register-validation"></div>
+            <button class="btn" id="register-btn">تسجيل</button>
+            <button class="btn btn-back" id="back-from-register"><i class="fas fa-arrow-right"></i> رجوع</button>
+        </div>
+
+        <!-- 5️⃣ صفحة مشاركة المسابقة (مطورة مع عداد 20 مشاركة) -->
+        <div id="share-screen" class="screen hidden">
+            <h2>🚀 شارك واكسب فرصة مضاعفة</h2>
+            <p style="margin:20px 0;">ادعُ 20 صديقاً واربح جائزة إضافية!</p>
+            <div class="share-counter">
+                <span>عدد المشاركات: </span><span id="share-count">0</span>/20
+            </div>
+            <div class="share-buttons">
+                <a href="#" class="share-btn whatsapp" id="share-wa" target="_blank"><i class="fab fa-whatsapp"></i> واتساب</a>
+                <a href="#" class="share-btn facebook" id="share-fb" target="_blank"><i class="fab fa-facebook"></i> فيسبوك</a>
+                <a href="#" class="share-btn twitter" id="share-tw" target="_blank"><i class="fab fa-twitter"></i> تويتر</a>
+                <a href="#" class="share-btn telegram" id="share-tg" target="_blank"><i class="fab fa-telegram"></i> تلغرام</a>
+                <a href="#" class="share-btn linkedin" id="share-in" target="_blank"><i class="fab fa-linkedin"></i> لينكدإن</a>
+            </div>
+            <button class="btn btn-back" id="back-from-share"><i class="fas fa-arrow-right"></i> رجوع</button>
+            <div class="footer-note">شكراً لمشاركتك، تم حفظ بياناتك</div>
+        </div>
+
+        <!-- 6️⃣ صفحة الجائزة الإضافية (تظهر عند إكمال 20 مشاركة) -->
+        <div id="bonus-screen" class="screen hidden">
+            <h2>🎉 تهانينا! 🎉</h2>
+            <div style="font-size: 4rem; text-align: center; margin: 30px;">🏆</div>
+            <p class="message-area" style="font-size: 1.8rem;">لقد أكملت 20 مشاركة</p>
+            <p class="message-area" style="background: #f1c40f; color: #0b1a2a;">وفرزت بجائزة إضافية: 500 دولار هدية!</p>
+            <button class="btn" id="restart-btn">ابدأ من جديد</button>
+        </div>
+    </div>
+
+    <!-- ربط ملف JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
